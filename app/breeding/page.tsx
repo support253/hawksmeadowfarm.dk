@@ -15,7 +15,7 @@ export default function BreedingPage() {
         subhead="Pairings chosen for temperament, health and working ability."
         ctaLabel="Puppy Enquiry"
         ctaHref="/contact"
-        imageLabel="Breeding hero — working dog portrait, golden hour, woodland backdrop, dignified"
+        videoSrc="/hf_20260502_191149_9a70ebe7-5bd5-4d7f-ad2c-6b8b3a51de0e.mp4"
       />
 
       {/* Current pairing — editorial broadsheet moment */}

@@ -15,7 +15,7 @@ export default function BoardingPage() {
         subhead="A boarding environment built for dogs of the highest standard."
         ctaLabel="Make an Enquiry"
         ctaHref="/contact"
-        imageLabel="Boarding hero — exterior of kennel building, soft dawn light, dogs in foreground"
+        videoSrc="/hf_20260502_191129_c144e110-0f67-4b7d-b2d0-f45916717f34.mp4"
       />
 
       {/* Intro */}

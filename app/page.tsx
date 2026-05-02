@@ -84,7 +84,7 @@ export default function HomePage() {
       />
 
       {/* Breeding flagship */}
-      <BreedingFlagship />
+      <BreedingFlagship videoSrc="/hf_20260502_191103_027660b7-dac6-4853-a01c-3d12ba86aa73.mp4" />
 
       {/* Philosophy pulled quote */}
       <Quote attribution="Our Approach">
@@ -105,7 +105,7 @@ export default function HomePage() {
         }
         ctaLabel="About Hawksmeadow"
         ctaHref="/about"
-        imageLabel="home-4 — handler from behind in waxed jacket with black Lab at heel, looking out across misted meadow at first light"
+        videoSrc="/hf_20260502_191116_f14c5bef-374d-45db-b397-3b3fe78a3e02.mp4"
         imageRatio="4/5"
         imageSide="left"
       />

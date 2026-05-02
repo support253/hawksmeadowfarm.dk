@@ -38,7 +38,7 @@ export default function AboutPage() {
         eyebrow="About"
         headline="A different kind of kennel."
         subhead="Twelve years of professional dog handling, applied to the way dogs are kept."
-        imageLabel="About hero — handler walking through morning fields with dog at heel"
+        videoSrc="/hf_20260502_191156_d26b6784-9433-4086-9d8a-54ffe92845f1.mp4"
       />
 
       {/* Story */}

@@ -14,7 +14,7 @@ export default function TrainingPage() {
         subhead="Calm, consistent training tailored to each dog."
         ctaLabel="Make an Enquiry"
         ctaHref="/contact"
-        imageLabel="Training hero — handler walking with dog at heel, open field, soft morning light"
+        videoSrc="/hf_20260502_191139_b898734e-ab2a-4f9d-b26b-cdd894d3f8f2.mp4"
       />
 
       <section className="py-24 md:py-32">
