@@ -11,13 +11,13 @@ const easeOut: [number, number, number, number] = [0.22, 1, 0.36, 1];
 // x = initial translate (px). Positive = starts to the right of final position; negative = starts left.
 // Inner links (closer to logo) get smaller offsets and earlier delays so they emerge from the logo first.
 const leftLinks = [
-  { href: "/boarding", label: "Boarding", x: 120, delay: 0.55 }, // outer
-  { href: "/training", label: "Training", x: 60, delay: 0.45 }, // inner
+  { href: "/boarding", label: "Boarding", x: 120, delay: 0.8 }, // outer
+  { href: "/training", label: "Training", x: 60, delay: 0.6 }, // inner
 ];
 
 const rightLinks = [
-  { href: "/breeding", label: "Breeding", x: -60, delay: 0.45 }, // inner
-  { href: "/about", label: "About", x: -120, delay: 0.55 }, // outer
+  { href: "/breeding", label: "Breeding", x: -60, delay: 0.6 }, // inner
+  { href: "/about", label: "About", x: -120, delay: 0.8 }, // outer
 ];
 
 const mobileLinks = [
@@ -64,7 +64,7 @@ export default function Nav() {
               key={l.href}
               initial={{ opacity: 0, x: l.x }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: l.delay, ease: easeOut }}
+              transition={{ duration: 1.1, delay: l.delay, ease: easeOut }}
             >
               <Link
                 href={l.href}
@@ -81,7 +81,7 @@ export default function Nav() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: easeOut }}
+          transition={{ duration: 0.9, delay: 0.15, ease: easeOut }}
           className="md:flex-shrink-0"
         >
           <Link href="/" aria-label="Hawksmeadow Farm — Home" className="block">
@@ -105,7 +105,7 @@ export default function Nav() {
               key={l.href}
               initial={{ opacity: 0, x: l.x }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: l.delay, ease: easeOut }}
+              transition={{ duration: 1.1, delay: l.delay, ease: easeOut }}
             >
               <Link
                 href={l.href}
@@ -119,7 +119,7 @@ export default function Nav() {
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.85, ease: easeOut }}
+            transition={{ duration: 1.0, delay: 1.2, ease: easeOut }}
             className="ml-auto"
           >
             <Link
