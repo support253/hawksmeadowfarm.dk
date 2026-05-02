@@ -23,7 +23,7 @@ export default function PlaceholderImage({
 }) {
   return (
     <div
-      className={`${ratioClasses[ratio]} w-full bg-[var(--color-earth)]/25 flex items-center justify-center overflow-hidden ${className}`}
+      className={`${ratioClasses[ratio]} w-full bg-[var(--color-earth)]/25 flex items-center justify-center overflow-hidden rounded-xl ${className}`}
     >
       {videoSrc ? (
         <video
