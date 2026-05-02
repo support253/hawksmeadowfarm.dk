@@ -47,7 +47,7 @@ export default function Nav() {
             width={750}
             height={850}
             priority
-            className={`h-20 md:h-24 w-auto transition-[filter] duration-500 ${
+            className={`h-28 md:h-36 w-auto -my-4 md:-my-6 transition-[filter] duration-500 ${
               useLightText ? "invert brightness-200 contrast-100" : ""
             }`}
           />
