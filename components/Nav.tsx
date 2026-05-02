@@ -5,11 +5,19 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
-const links = [
+const leftLinks = [
   { href: "/boarding", label: "Boarding" },
   { href: "/training", label: "Training" },
+];
+
+const rightLinks = [
   { href: "/breeding", label: "Breeding" },
   { href: "/about", label: "About" },
+];
+
+const mobileLinks = [
+  ...leftLinks,
+  ...rightLinks,
   { href: "/contact", label: "Contact" },
 ];
 
@@ -31,6 +39,8 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const linkColor = useLightText ? "var(--color-bg)" : "var(--color-text)";
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${
@@ -39,8 +49,27 @@ export default function Nav() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-3 md:py-2 flex items-center justify-between">
-        <Link href="/" aria-label="Hawksmeadow Farm — Home" className="block">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-3 md:py-2 flex items-center justify-between gap-6 md:gap-10">
+        {/* Desktop: left nav links — pushed toward center logo */}
+        <nav className="hidden md:flex items-center gap-10 flex-1 justify-end">
+          {leftLinks.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              style={{ color: linkColor }}
+              className="text-eyebrow no-underline transition-colors duration-500 hover:opacity-70"
+            >
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Logo — left on mobile, center on desktop */}
+        <Link
+          href="/"
+          aria-label="Hawksmeadow Farm — Home"
+          className="block md:flex-shrink-0"
+        >
           <Image
             src="/logo.png"
             alt="Hawksmeadow Farm"
@@ -53,26 +82,31 @@ export default function Nav() {
           />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-10">
-          {links.map((l) => (
+        {/* Desktop: right nav links (clustered near logo) + Contact (pushed far right) */}
+        <nav className="hidden md:flex items-center gap-10 flex-1 justify-start">
+          {rightLinks.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              style={{
-                color: useLightText ? "var(--color-bg)" : "var(--color-text)",
-              }}
+              style={{ color: linkColor }}
               className="text-eyebrow no-underline transition-colors duration-500 hover:opacity-70"
             >
               {l.label}
             </Link>
           ))}
+          <Link
+            href="/contact"
+            style={{ color: linkColor }}
+            className="text-eyebrow no-underline border-b border-current pb-1 transition-colors duration-500 hover:opacity-70 ml-auto"
+          >
+            Contact
+          </Link>
         </nav>
 
+        {/* Mobile menu button */}
         <button
           aria-label="Open menu"
-          style={{
-            color: useLightText ? "var(--color-bg)" : "var(--color-text)",
-          }}
+          style={{ color: linkColor }}
           className="md:hidden text-eyebrow transition-colors duration-500"
           onClick={() => setOpen((v) => !v)}
         >
@@ -82,7 +116,7 @@ export default function Nav() {
 
       {open && (
         <nav className="md:hidden border-t border-[var(--color-line)] bg-[var(--color-bg)] px-6 py-8 flex flex-col gap-6">
-          {links.map((l) => (
+          {mobileLinks.map((l) => (
             <Link
               key={l.href}
               href={l.href}
