@@ -39,7 +39,6 @@ export default function AboutPage() {
         headline="A different kind of kennel."
         subhead="Twelve years of professional dog handling, applied to the way dogs are kept."
         videoSrc="/hf_20260502_191156_d26b6784-9433-4086-9d8a-54ffe92845f1.mp4"
-        compactMobile
       />
 
       {/* Story */}
