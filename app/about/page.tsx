@@ -5,24 +5,28 @@ import PlaceholderImage from "@/components/PlaceholderImage";
 
 const values = [
   {
-    label: "Organic",
-    body: "A natural environment built on woodland, field and open grassland — not concrete and chrome.",
+    label: "Organic & Natural",
+    body: "A real environment built on woodland, field and open grassland — not concrete and chrome.",
   },
   {
-    label: "Calm",
-    body: "Low-stress routines and quiet handling. The dogs notice. So do their owners.",
-  },
-  {
-    label: "Structured",
+    label: "Calm, Structured Routines",
     body: "Predictable rhythms across the day. Dogs do best when they know what comes next.",
   },
   {
-    label: "Professional",
-    body: "Built on over a decade of hands-on experience with working dogs.",
+    label: "Well-Rounded Dogs",
+    body: "We aim to send dogs home more capable, more settled, and more themselves than when they arrived.",
   },
   {
-    label: "Considered",
-    body: "We work with a limited number of dogs. Quality over volume, every time.",
+    label: "Responsible Feeding",
+    body: "Each dog fed to their own diet and schedule. We don't shortcut nutrition.",
+  },
+  {
+    label: "Professional Handling",
+    body: "Built on over a decade of hands-on experience with working dogs and high-drive breeds.",
+  },
+  {
+    label: "Low-Stress Development",
+    body: "Balanced exposure, quiet correction, generous rest. Stress is the enemy of learning.",
   },
 ];
 
@@ -83,7 +87,7 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-12">
             {values.map((v) => (
               <div key={v.label} className="flex flex-col gap-4">
                 <h3

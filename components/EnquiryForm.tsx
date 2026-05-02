@@ -6,6 +6,7 @@ const enquiryTypes = [
   "Boarding",
   "Training",
   "Breeding",
+  "Puppy Enquiry",
   "Other",
 ] as const;
 

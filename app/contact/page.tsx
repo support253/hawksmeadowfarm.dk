@@ -21,7 +21,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="pb-32 md:pb-48">
+      <section className="pb-24 md:pb-32">
         <div className="max-w-[1100px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
           {/* Form */}
           <div className="lg:col-span-7">
@@ -59,6 +59,24 @@ export default function ContactPage() {
               </p>
             </div>
           </aside>
+        </div>
+      </section>
+
+      {/* Map */}
+      <section className="pb-32 md:pb-48">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col gap-8">
+          <div className="text-center">
+            <Eyebrow>Find Us</Eyebrow>
+          </div>
+          <div className="aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden border border-[var(--color-line)]">
+            <iframe
+              src="https://maps.google.com/maps?q=Fyn,Denmark&t=&z=10&ie=UTF8&iwloc=&output=embed"
+              title="Hawksmeadow Farm — Fyn, Denmark"
+              className="w-full h-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </section>
     </>
