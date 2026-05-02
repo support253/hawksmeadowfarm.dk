@@ -23,7 +23,7 @@ export default function PlaceholderImage({
 }) {
   return (
     <div
-      className={`${ratioClasses[ratio]} w-full bg-[var(--color-earth)]/25 flex items-center justify-center overflow-hidden rounded-xl ${className}`}
+      className={`group ${ratioClasses[ratio]} w-full bg-[var(--color-earth)]/25 flex items-center justify-center overflow-hidden rounded-xl ${className}`}
     >
       {videoSrc ? (
         <video
@@ -33,14 +33,14 @@ export default function PlaceholderImage({
           muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]"
         />
       ) : imageSrc ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={imageSrc}
           alt={label ?? ""}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]"
         />
       ) : label ? (
         <span className="text-eyebrow text-[var(--color-text-muted)] px-4 text-center">

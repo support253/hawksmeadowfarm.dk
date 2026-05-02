@@ -1,4 +1,10 @@
+"use client";
+
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import PlaceholderImage from "./PlaceholderImage";
+
+const easeOut: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 export default function Hero({
   eyebrow,
@@ -19,9 +25,20 @@ export default function Hero({
   videoSrc?: string;
   posterSrc?: string;
 }) {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  // Slow parallax — bg translates at ~25% scroll speed for a quiet, cinematic drift.
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
+
   return (
-    <section className="relative w-full h-screen min-h-[640px] overflow-hidden">
-      <div className="absolute inset-0">
+    <section
+      ref={ref}
+      className="relative w-full h-screen min-h-[640px] overflow-hidden"
+    >
+      <motion.div className="absolute inset-0" style={{ y: bgY }}>
         {videoSrc ? (
           <video
             src={videoSrc}
@@ -37,35 +54,51 @@ export default function Hero({
           <PlaceholderImage ratio="16/9" label={imageLabel} className="h-full" />
         )}
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-text)]/15 via-transparent to-[var(--color-text)]/55" />
-      </div>
+      </motion.div>
 
       <div className="relative z-10 h-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col justify-end pb-24 md:pb-32">
         {eyebrow && (
-          <span className="text-eyebrow hero-overlay-eyebrow mb-6">
+          <motion.span
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: easeOut }}
+            className="text-eyebrow hero-overlay-eyebrow mb-6"
+          >
             {eyebrow}
-          </span>
+          </motion.span>
         )}
 
-        <h1
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5, ease: easeOut }}
           className="font-display hero-overlay-headline mb-6"
           style={{ fontSize: "var(--text-display)" }}
         >
           {headline}
-        </h1>
+        </motion.h1>
 
         {subhead && (
-          <p className="font-display-italic hero-overlay-headline text-[20px] md:text-[28px] max-w-[640px] mb-10">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.7, ease: easeOut }}
+            className="font-display-italic hero-overlay-headline text-[20px] md:text-[28px] max-w-[640px] mb-10"
+          >
             {subhead}
-          </p>
+          </motion.p>
         )}
 
         {ctaLabel && ctaHref && (
-          <a
+          <motion.a
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9, ease: easeOut }}
             href={ctaHref}
             className="inline-block self-start text-eyebrow hero-overlay-cta border-b pb-2 hover:opacity-70 transition-opacity no-underline"
           >
             {ctaLabel}
-          </a>
+          </motion.a>
         )}
       </div>
     </section>

@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import Quote from "@/components/Quote";
 import Eyebrow from "@/components/Eyebrow";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import Reveal from "@/components/Reveal";
 
 const values = [
   {
@@ -42,7 +43,7 @@ export default function AboutPage() {
 
       {/* Story */}
       <section className="py-24 md:py-32">
-        <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center">
+        <Reveal className="max-w-[860px] mx-auto px-6 md:px-12 text-center">
           <Eyebrow>The Story</Eyebrow>
           <p
             className="font-display-italic text-[var(--color-text)] mt-10"
@@ -57,27 +58,31 @@ export default function AboutPage() {
             training and breeding — the approach is the same throughout:
             considered, quiet, and built around the individual dog.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Portrait + setting */}
       <section className="py-24">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <PlaceholderImage
-            ratio="4/5"
-            label="Portrait of Ben — natural light, working environment, no studio energy"
-          />
-          <PlaceholderImage
-            ratio="4/5"
-            label="The setting — wide woodland or field, early morning"
-          />
+          <Reveal>
+            <PlaceholderImage
+              ratio="4/5"
+              label="Portrait of Ben — natural light, working environment, no studio energy"
+            />
+          </Reveal>
+          <Reveal delay={0.15}>
+            <PlaceholderImage
+              ratio="4/5"
+              label="The setting — wide woodland or field, early morning"
+            />
+          </Reveal>
         </div>
       </section>
 
       {/* Philosophy values */}
       <section className="py-20 md:py-28">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-          <div className="text-center mb-20">
+          <Reveal className="text-center mb-20">
             <Eyebrow>Philosophy</Eyebrow>
             <h2
               className="font-display text-[var(--color-text)] mt-8"
@@ -85,11 +90,11 @@ export default function AboutPage() {
             >
               How we work.
             </h2>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-12">
-            {values.map((v) => (
-              <div key={v.label} className="flex flex-col gap-4">
+            {values.map((v, i) => (
+              <Reveal key={v.label} delay={i * 0.08} className="flex flex-col gap-4">
                 <h3
                   className="font-display text-[var(--color-moss)]"
                   style={{ fontSize: "var(--text-h3)" }}
@@ -99,7 +104,7 @@ export default function AboutPage() {
                 <p className="text-[15px] leading-[1.7] text-[var(--color-text-muted)]">
                   {v.body}
                 </p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -112,7 +117,7 @@ export default function AboutPage() {
 
       {/* Setting */}
       <section className="py-24 md:py-32">
-        <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center">
+        <Reveal className="max-w-[860px] mx-auto px-6 md:px-12 text-center">
           <Eyebrow>The Setting</Eyebrow>
           <p
             className="font-display-italic text-[var(--color-text)] mt-10"
@@ -124,7 +129,7 @@ export default function AboutPage() {
             Quiet woodland and open grassland. Long mornings. Long evenings.
             The kind of place that gives a dog room to be a dog.
           </p>
-        </div>
+        </Reveal>
       </section>
     </>
   );

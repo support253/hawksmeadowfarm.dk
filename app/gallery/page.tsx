@@ -1,5 +1,6 @@
 import Eyebrow from "@/components/Eyebrow";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import Reveal from "@/components/Reveal";
 
 const galleryItems: Array<{
   ratio: "4/5" | "3/2" | "1/1" | "16/9";
@@ -20,7 +21,7 @@ export default function GalleryPage() {
     <>
       {/* Hero header (compact, not full screen) */}
       <section className="pt-40 md:pt-48 pb-24">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 text-center">
+        <Reveal className="max-w-[1400px] mx-auto px-6 md:px-12 text-center">
           <Eyebrow>Gallery</Eyebrow>
           <h1
             className="font-display text-[var(--color-text)] mt-8"
@@ -31,7 +32,7 @@ export default function GalleryPage() {
           <p className="editorial-prose mx-auto mt-8 text-[var(--color-text-muted)]">
             A small selection. We update it occasionally — never overcrowded.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Editorial grid */}
@@ -39,9 +40,9 @@ export default function GalleryPage() {
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-10">
             {galleryItems.map((item, i) => (
-              <div key={i} className={item.span ?? "lg:col-span-6"}>
+              <Reveal key={i} delay={(i % 3) * 0.1} className={item.span ?? "lg:col-span-6"}>
                 <PlaceholderImage ratio={item.ratio} label={item.label} />
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

@@ -4,6 +4,7 @@ import Quote from "@/components/Quote";
 import Eyebrow from "@/components/Eyebrow";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import OrnamentDivider from "@/components/OrnamentDivider";
+import Reveal from "@/components/Reveal";
 
 export default function BreedingPage() {
   return (
@@ -19,7 +20,7 @@ export default function BreedingPage() {
 
       {/* Current pairing — editorial broadsheet moment */}
       <section className="py-32 md:py-48">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+        <Reveal className="max-w-[1200px] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             {/* Metadata column — vertical moss hairline rule on lg+ */}
             <div className="lg:col-span-3 lg:border-r lg:border-[var(--color-moss)]/30 lg:pr-12 flex flex-col gap-5">
@@ -62,7 +63,7 @@ export default function BreedingPage() {
               </a>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Programme philosophy */}
@@ -91,12 +92,12 @@ export default function BreedingPage() {
 
       {/* Image break */}
       <section>
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+        <Reveal className="max-w-[1400px] mx-auto px-6 md:px-12">
           <PlaceholderImage
             ratio="21/9"
             label="Wide environment shot — fields, soft early light, sense of space"
           />
-        </div>
+        </Reveal>
       </section>
 
       <EditorialSection
@@ -127,7 +128,7 @@ export default function BreedingPage() {
       </Quote>
 
       <section className="py-24 md:py-36">
-        <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col gap-10 items-center">
+        <Reveal className="max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col gap-10 items-center">
           <OrnamentDivider />
           <Eyebrow>Puppy Enquiries</Eyebrow>
           <h2
@@ -147,7 +148,7 @@ export default function BreedingPage() {
           >
             Register Interest
           </a>
-        </div>
+        </Reveal>
       </section>
     </>
   );

@@ -1,11 +1,12 @@
 import Eyebrow from "@/components/Eyebrow";
 import EnquiryForm from "@/components/EnquiryForm";
+import Reveal from "@/components/Reveal";
 
 export default function ContactPage() {
   return (
     <>
       <section className="pt-40 md:pt-48 pb-24">
-        <div className="max-w-[1100px] mx-auto px-6 md:px-12 text-center">
+        <Reveal className="max-w-[1100px] mx-auto px-6 md:px-12 text-center">
           <Eyebrow>Enquiries</Eyebrow>
           <h1
             className="font-display text-[var(--color-text)] mt-8"
@@ -18,18 +19,18 @@ export default function ContactPage() {
             Please reach out for boarding, training or breeding enquiries —
             we respond personally to every message.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <section className="pb-24 md:pb-32">
         <div className="max-w-[1100px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
           {/* Form */}
-          <div className="lg:col-span-7">
+          <Reveal className="lg:col-span-7">
             <EnquiryForm />
-          </div>
+          </Reveal>
 
           {/* Contact details */}
-          <aside className="lg:col-span-5 flex flex-col gap-12 lg:pt-2">
+          <Reveal delay={0.15} className="lg:col-span-5 flex flex-col gap-12 lg:pt-2">
             <div className="flex flex-col gap-3">
               <Eyebrow>Email</Eyebrow>
               <a
@@ -58,13 +59,13 @@ export default function ContactPage() {
                 appointment only.
               </p>
             </div>
-          </aside>
+          </Reveal>
         </div>
       </section>
 
       {/* Map */}
       <section className="pb-32 md:pb-48">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col gap-8">
+        <Reveal className="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col gap-8">
           <div className="text-center">
             <Eyebrow>Find Us</Eyebrow>
           </div>
@@ -77,7 +78,7 @@ export default function ContactPage() {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

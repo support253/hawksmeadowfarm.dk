@@ -4,6 +4,7 @@ import Quote from "@/components/Quote";
 import Eyebrow from "@/components/Eyebrow";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import OrnamentDivider from "@/components/OrnamentDivider";
+import Reveal from "@/components/Reveal";
 
 export default function BoardingPage() {
   return (
@@ -19,7 +20,7 @@ export default function BoardingPage() {
 
       {/* Intro */}
       <section className="py-24 md:py-32">
-        <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center">
+        <Reveal className="max-w-[860px] mx-auto px-6 md:px-12 text-center">
           <Eyebrow>The Approach</Eyebrow>
           <p
             className="font-display-italic text-[var(--color-text)] mt-10"
@@ -33,7 +34,7 @@ export default function BoardingPage() {
             individual attention and access to secure outdoor space — without
             the noise and stress of conventional facilities.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* What's included */}
@@ -61,7 +62,7 @@ export default function BoardingPage() {
 
       {/* Webcam mention */}
       <section className="py-24 md:py-32 bg-[var(--color-sage)]/15">
-        <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col gap-8">
+        <Reveal className="max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col gap-8">
           <Eyebrow>While You&rsquo;re Away</Eyebrow>
           <h2
             className="font-display text-[var(--color-text)]"
@@ -74,17 +75,17 @@ export default function BoardingPage() {
             dog&rsquo;s livestream — so you can check in from anywhere, at any
             time during their stay.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Image break */}
       <section className="py-32 md:py-48">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+        <Reveal className="max-w-[1400px] mx-auto px-6 md:px-12">
           <PlaceholderImage
             ratio="21/9"
             label="Wide environment shot — fields, kennels distant, golden hour"
           />
-        </div>
+        </Reveal>
       </section>
 
       <Quote attribution="On Boarding">
@@ -93,7 +94,7 @@ export default function BoardingPage() {
 
       {/* Closing CTA */}
       <section className="py-24 md:py-36">
-        <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col gap-10 items-center">
+        <Reveal className="max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col gap-10 items-center">
           <OrnamentDivider />
           <Eyebrow>Boarding Enquiries</Eyebrow>
           <h2
@@ -108,7 +109,7 @@ export default function BoardingPage() {
           >
             Enquire about Boarding
           </a>
-        </div>
+        </Reveal>
       </section>
     </>
   );

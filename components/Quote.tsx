@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 export default function Quote({
   children,
   attribution,
@@ -7,7 +9,7 @@ export default function Quote({
 }) {
   return (
     <section className="py-20 md:py-28">
-      <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col items-center gap-10">
+      <Reveal className="max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col items-center gap-10">
         <p
           className="font-display-italic text-[var(--color-moss)]"
           style={{ fontSize: "var(--text-h2)", lineHeight: 1.3 }}
@@ -22,7 +24,7 @@ export default function Quote({
             <span className="block w-8 h-px bg-[var(--color-text-muted)]/60" />
           </div>
         )}
-      </div>
+      </Reveal>
     </section>
   );
 }

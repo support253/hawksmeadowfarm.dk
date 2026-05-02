@@ -3,6 +3,7 @@ import EditorialSection from "@/components/EditorialSection";
 import Quote from "@/components/Quote";
 import Eyebrow from "@/components/Eyebrow";
 import OrnamentDivider from "@/components/OrnamentDivider";
+import Reveal from "@/components/Reveal";
 
 export default function TrainingPage() {
   return (
@@ -17,7 +18,7 @@ export default function TrainingPage() {
       />
 
       <section className="py-24 md:py-32">
-        <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center">
+        <Reveal className="max-w-[860px] mx-auto px-6 md:px-12 text-center">
           <Eyebrow>The Method</Eyebrow>
           <p
             className="font-display-italic text-[var(--color-text)] mt-10"
@@ -31,7 +32,7 @@ export default function TrainingPage() {
             quiet, methodical and built on understanding — never on noise or
             force.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <EditorialSection
@@ -71,7 +72,7 @@ export default function TrainingPage() {
       </Quote>
 
       <section className="py-24 md:py-36">
-        <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col gap-10 items-center">
+        <Reveal className="max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col gap-10 items-center">
           <OrnamentDivider />
           <Eyebrow>Training Enquiries</Eyebrow>
           <h2
@@ -86,7 +87,7 @@ export default function TrainingPage() {
           >
             Enquire about Training
           </a>
-        </div>
+        </Reveal>
       </section>
     </>
   );

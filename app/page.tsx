@@ -4,6 +4,7 @@ import BreedingFlagship from "@/components/BreedingFlagship";
 import Quote from "@/components/Quote";
 import Eyebrow from "@/components/Eyebrow";
 import OrnamentDivider from "@/components/OrnamentDivider";
+import Reveal from "@/components/Reveal";
 
 export default function HomePage() {
   return (
@@ -19,7 +20,7 @@ export default function HomePage() {
 
       {/* Intro */}
       <section className="pt-12 md:pt-16 pb-20 md:pb-28">
-        <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center">
+        <Reveal className="max-w-[860px] mx-auto px-6 md:px-12 text-center">
           <div className="inline-flex items-baseline gap-3 mb-2">
             <span
               className="font-display-italic text-[var(--color-moss)]"
@@ -42,7 +43,7 @@ export default function HomePage() {
             dogs, our focus is simple — to provide a safe, balanced and
             natural environment where dogs can thrive.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Boarding */}
@@ -111,7 +112,7 @@ export default function HomePage() {
 
       {/* Closing CTA */}
       <section className="py-24 md:py-36">
-        <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col gap-10 items-center">
+        <Reveal className="max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col gap-10 items-center">
           <OrnamentDivider />
           <Eyebrow>Enquiries</Eyebrow>
           <h2
@@ -130,7 +131,7 @@ export default function HomePage() {
           >
             Make an Enquiry
           </a>
-        </div>
+        </Reveal>
       </section>
     </>
   );

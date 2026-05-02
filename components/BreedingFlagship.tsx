@@ -1,4 +1,5 @@
 import PlaceholderImage from "./PlaceholderImage";
+import Reveal from "./Reveal";
 
 export default function BreedingFlagship({
   ctaHref = "/breeding",
@@ -40,7 +41,7 @@ export default function BreedingFlagship({
 
       {/* Text overlay — left third */}
       <div className="relative z-10 h-full max-w-[1400px] mx-auto px-6 md:px-12 flex items-center">
-        <div className="max-w-[520px] flex flex-col gap-8 md:gap-10">
+        <Reveal className="max-w-[520px] flex flex-col gap-8 md:gap-10">
           <span className="text-eyebrow hero-overlay-eyebrow">
             The Breeding Programme
           </span>
@@ -61,13 +62,21 @@ export default function BreedingFlagship({
             limited.
           </p>
 
+          <p
+            className="hero-overlay-headline max-w-[460px]"
+            style={{ fontSize: "17px", lineHeight: 1.7, opacity: 0.9 }}
+          >
+            Pairings are chosen with care — temperament, health, working ability.
+            We breed for balanced, capable dogs, not for volume.
+          </p>
+
           <a
             href={ctaHref}
             className="inline-block self-start text-eyebrow hero-overlay-cta border-b pb-2 hover:opacity-70 transition-opacity no-underline"
           >
             Read about the programme
           </a>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

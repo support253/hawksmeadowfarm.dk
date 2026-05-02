@@ -1,5 +1,6 @@
 import PlaceholderImage from "./PlaceholderImage";
 import Eyebrow from "./Eyebrow";
+import Reveal from "./Reveal";
 
 type Props = {
   eyebrow?: string;
@@ -27,18 +28,18 @@ export default function EditorialSection({
   imageSrc,
 }: Props) {
   const ImageBlock = (
-    <div className="lg:col-span-7">
+    <Reveal className="lg:col-span-7">
       <PlaceholderImage
         ratio={imageRatio}
         label={imageLabel}
         videoSrc={videoSrc}
         imageSrc={imageSrc}
       />
-    </div>
+    </Reveal>
   );
 
   const TextBlock = (
-    <div className="lg:col-span-5 flex flex-col gap-8">
+    <Reveal delay={0.15} className="lg:col-span-5 flex flex-col gap-8">
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
       <h2
         className="font-display text-[var(--color-text)]"
@@ -52,7 +53,7 @@ export default function EditorialSection({
           {ctaLabel}
         </a>
       )}
-    </div>
+    </Reveal>
   );
 
   return (
