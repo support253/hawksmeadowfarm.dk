@@ -4,20 +4,27 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 
+const easeOut: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+// x = initial translate (px). Positive = starts to the right of final position; negative = starts left.
+// Inner links (closer to logo) get smaller offsets and earlier delays so they emerge from the logo first.
 const leftLinks = [
-  { href: "/boarding", label: "Boarding" },
-  { href: "/training", label: "Training" },
+  { href: "/boarding", label: "Boarding", x: 120, delay: 0.55 }, // outer
+  { href: "/training", label: "Training", x: 60, delay: 0.45 }, // inner
 ];
 
 const rightLinks = [
-  { href: "/breeding", label: "Breeding" },
-  { href: "/about", label: "About" },
+  { href: "/breeding", label: "Breeding", x: -60, delay: 0.45 }, // inner
+  { href: "/about", label: "About", x: -120, delay: 0.55 }, // outer
 ];
 
 const mobileLinks = [
-  ...leftLinks,
-  ...rightLinks,
+  { href: "/boarding", label: "Boarding" },
+  { href: "/training", label: "Training" },
+  { href: "/breeding", label: "Breeding" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -53,54 +60,76 @@ export default function Nav() {
         {/* Desktop: left nav links — pushed toward center logo */}
         <nav className="hidden md:flex items-center gap-10 flex-1 justify-end">
           {leftLinks.map((l) => (
-            <Link
+            <motion.span
               key={l.href}
-              href={l.href}
-              style={{ color: linkColor }}
-              className="text-eyebrow no-underline transition-colors duration-500 hover:opacity-70"
+              initial={{ opacity: 0, x: l.x }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: l.delay, ease: easeOut }}
             >
-              {l.label}
-            </Link>
+              <Link
+                href={l.href}
+                style={{ color: linkColor }}
+                className="text-eyebrow no-underline transition-colors duration-500 hover:opacity-70"
+              >
+                {l.label}
+              </Link>
+            </motion.span>
           ))}
         </nav>
 
         {/* Logo — left on mobile, center on desktop */}
-        <Link
-          href="/"
-          aria-label="Hawksmeadow Farm — Home"
-          className="block md:flex-shrink-0"
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: easeOut }}
+          className="md:flex-shrink-0"
         >
-          <Image
-            src="/logo.png"
-            alt="Hawksmeadow Farm"
-            width={750}
-            height={850}
-            priority
-            className={`h-28 md:h-36 w-auto -my-4 md:-my-6 transition-[filter] duration-500 ${
-              useLightText ? "invert brightness-200 contrast-100" : ""
-            }`}
-          />
-        </Link>
+          <Link href="/" aria-label="Hawksmeadow Farm — Home" className="block">
+            <Image
+              src="/logo.png"
+              alt="Hawksmeadow Farm"
+              width={750}
+              height={850}
+              priority
+              className={`h-28 md:h-36 w-auto -my-4 md:-my-6 transition-[filter] duration-500 ${
+                useLightText ? "invert brightness-200 contrast-100" : ""
+              }`}
+            />
+          </Link>
+        </motion.div>
 
         {/* Desktop: right nav links (clustered near logo) + Contact (pushed far right) */}
         <nav className="hidden md:flex items-center gap-10 flex-1 justify-start">
           {rightLinks.map((l) => (
-            <Link
+            <motion.span
               key={l.href}
-              href={l.href}
-              style={{ color: linkColor }}
-              className="text-eyebrow no-underline transition-colors duration-500 hover:opacity-70"
+              initial={{ opacity: 0, x: l.x }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: l.delay, ease: easeOut }}
             >
-              {l.label}
-            </Link>
+              <Link
+                href={l.href}
+                style={{ color: linkColor }}
+                className="text-eyebrow no-underline transition-colors duration-500 hover:opacity-70"
+              >
+                {l.label}
+              </Link>
+            </motion.span>
           ))}
-          <Link
-            href="/contact"
-            style={{ color: linkColor }}
-            className="text-eyebrow no-underline border-b border-current pb-1 transition-colors duration-500 hover:opacity-70 ml-auto"
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.85, ease: easeOut }}
+            className="ml-auto"
           >
-            Contact
-          </Link>
+            <Link
+              href="/contact"
+              style={{ color: linkColor }}
+              className="text-eyebrow no-underline border-b border-current pb-1 transition-colors duration-500 hover:opacity-70"
+            >
+              Contact
+            </Link>
+          </motion.span>
         </nav>
 
         {/* Mobile menu button */}
