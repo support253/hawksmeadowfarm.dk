@@ -1,5 +1,6 @@
 import PlaceholderImage from "./PlaceholderImage";
 import Reveal from "./Reveal";
+import Typewriter from "./Typewriter";
 
 export default function BreedingFlagship({
   ctaHref = "/breeding",
@@ -58,8 +59,17 @@ export default function BreedingFlagship({
             style={{ fontSize: "var(--text-h3)", lineHeight: 1.4 }}
           >
             Our current pairing involves the current World Field Trials
-            Champion. A litter is expected July 2026. Availability will be
-            limited.
+            Champion.
+          </p>
+
+          <p
+            className="font-display-italic hero-overlay-headline"
+            style={{ fontSize: "var(--text-h3)", lineHeight: 1.4 }}
+          >
+            <Typewriter
+              text="A litter is expected July 2026. Availability will be limited."
+              startDelay={1100}
+            />
           </p>
 
           <p
