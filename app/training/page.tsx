@@ -2,6 +2,8 @@ import Hero from "@/components/Hero";
 import EditorialSection from "@/components/EditorialSection";
 import Quote from "@/components/Quote";
 import Eyebrow from "@/components/Eyebrow";
+import GhostHeading from "@/components/GhostHeading";
+import OrnamentDivider from "@/components/OrnamentDivider";
 
 export default function TrainingPage() {
   return (
@@ -15,8 +17,11 @@ export default function TrainingPage() {
         imageLabel="Training hero — handler walking with dog at heel, open field, soft morning light"
       />
 
-      <section className="py-32 md:py-48">
-        <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center">
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <GhostHeading position="top-right" size="lg">
+          Training
+        </GhostHeading>
+        <div className="relative max-w-[860px] mx-auto px-6 md:px-12 text-center">
           <Eyebrow>The Method</Eyebrow>
           <p
             className="font-display-italic text-[var(--color-text)] mt-10"
@@ -69,8 +74,12 @@ export default function TrainingPage() {
         Clarity, structure, and the right environment. Dogs do the rest.
       </Quote>
 
-      <section className="py-32 md:py-48">
-        <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col gap-10 items-center">
+      <section className="relative py-24 md:py-36 overflow-hidden">
+        <GhostHeading position="bottom-left" size="lg">
+          Method
+        </GhostHeading>
+        <div className="relative max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col gap-10 items-center">
+          <OrnamentDivider />
           <Eyebrow>Training Enquiries</Eyebrow>
           <h2
             className="font-display text-[var(--color-text)]"

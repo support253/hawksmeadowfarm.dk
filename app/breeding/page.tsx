@@ -3,6 +3,8 @@ import EditorialSection from "@/components/EditorialSection";
 import Quote from "@/components/Quote";
 import Eyebrow from "@/components/Eyebrow";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import GhostHeading from "@/components/GhostHeading";
+import OrnamentDivider from "@/components/OrnamentDivider";
 
 export default function BreedingPage() {
   return (
@@ -125,8 +127,12 @@ export default function BreedingPage() {
         twelve weeks.
       </Quote>
 
-      <section className="py-32 md:py-48">
-        <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col gap-10 items-center">
+      <section className="relative py-24 md:py-36 overflow-hidden">
+        <GhostHeading position="bottom-right" size="lg">
+          Champion
+        </GhostHeading>
+        <div className="relative max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col gap-10 items-center">
+          <OrnamentDivider />
           <Eyebrow>Puppy Enquiries</Eyebrow>
           <h2
             className="font-display text-[var(--color-text)]"

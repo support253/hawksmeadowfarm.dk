@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import Quote from "@/components/Quote";
 import Eyebrow from "@/components/Eyebrow";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import GhostHeading from "@/components/GhostHeading";
 
 const values = [
   {
@@ -37,8 +38,11 @@ export default function AboutPage() {
       />
 
       {/* Story */}
-      <section className="py-32 md:py-48">
-        <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center">
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <GhostHeading position="top-left" size="xl">
+          Twelve
+        </GhostHeading>
+        <div className="relative max-w-[860px] mx-auto px-6 md:px-12 text-center">
           <Eyebrow>The Story</Eyebrow>
           <p
             className="font-display-italic text-[var(--color-text)] mt-10"
@@ -71,7 +75,7 @@ export default function AboutPage() {
       </section>
 
       {/* Philosophy values */}
-      <section className="py-32 md:py-48">
+      <section className="py-20 md:py-28">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="text-center mb-20">
             <Eyebrow>Philosophy</Eyebrow>
@@ -107,8 +111,11 @@ export default function AboutPage() {
       </Quote>
 
       {/* Setting */}
-      <section className="py-32 md:py-48">
-        <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center">
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <GhostHeading position="top-right" size="xl">
+          Fyn
+        </GhostHeading>
+        <div className="relative max-w-[860px] mx-auto px-6 md:px-12 text-center">
           <Eyebrow>The Setting</Eyebrow>
           <p
             className="font-display-italic text-[var(--color-text)] mt-10"
