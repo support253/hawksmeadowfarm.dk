@@ -15,6 +15,7 @@ export default function Hero({
   imageLabel = "Hero — full bleed, dog in landscape, golden hour",
   videoSrc,
   posterSrc,
+  compactMobile = false,
 }: {
   eyebrow?: string;
   headline: string;
@@ -24,6 +25,7 @@ export default function Hero({
   imageLabel?: string;
   videoSrc?: string;
   posterSrc?: string;
+  compactMobile?: boolean;
 }) {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -36,7 +38,11 @@ export default function Hero({
   return (
     <section
       ref={ref}
-      className="relative w-full h-screen min-h-[640px] overflow-hidden"
+      className={`relative w-full overflow-hidden ${
+        compactMobile
+          ? "h-[65vh] min-h-[480px] md:h-screen md:min-h-[640px]"
+          : "h-screen min-h-[640px]"
+      }`}
     >
       <motion.div className="absolute inset-0" style={{ y: bgY }}>
         {videoSrc ? (
