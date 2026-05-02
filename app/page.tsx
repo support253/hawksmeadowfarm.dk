@@ -3,7 +3,6 @@ import EditorialSection from "@/components/EditorialSection";
 import BreedingFlagship from "@/components/BreedingFlagship";
 import Quote from "@/components/Quote";
 import Eyebrow from "@/components/Eyebrow";
-import GhostHeading from "@/components/GhostHeading";
 import OrnamentDivider from "@/components/OrnamentDivider";
 
 export default function HomePage() {
@@ -19,11 +18,8 @@ export default function HomePage() {
       />
 
       {/* Intro */}
-      <section className="relative pt-12 md:pt-16 pb-20 md:pb-28 overflow-hidden">
-        <GhostHeading position="top-right" size="lg">
-          Hawksmeadow
-        </GhostHeading>
-        <div className="relative max-w-[860px] mx-auto px-6 md:px-12 text-center">
+      <section className="pt-12 md:pt-16 pb-20 md:pb-28">
+        <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center">
           <div className="inline-flex items-baseline gap-3 mb-2">
             <span
               className="font-display-italic text-[var(--color-moss)]"
@@ -114,11 +110,8 @@ export default function HomePage() {
       />
 
       {/* Closing CTA */}
-      <section className="relative py-24 md:py-36 overflow-hidden">
-        <GhostHeading position="bottom-left" size="lg">
-          Enquire
-        </GhostHeading>
-        <div className="relative max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col gap-10 items-center">
+      <section className="py-24 md:py-36">
+        <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col gap-10 items-center">
           <OrnamentDivider />
           <Eyebrow>Enquiries</Eyebrow>
           <h2

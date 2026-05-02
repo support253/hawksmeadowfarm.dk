@@ -3,7 +3,6 @@ import EditorialSection from "@/components/EditorialSection";
 import Quote from "@/components/Quote";
 import Eyebrow from "@/components/Eyebrow";
 import PlaceholderImage from "@/components/PlaceholderImage";
-import GhostHeading from "@/components/GhostHeading";
 import OrnamentDivider from "@/components/OrnamentDivider";
 
 export default function BoardingPage() {
@@ -19,11 +18,8 @@ export default function BoardingPage() {
       />
 
       {/* Intro */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
-        <GhostHeading position="top-left" size="lg">
-          Boarding
-        </GhostHeading>
-        <div className="relative max-w-[860px] mx-auto px-6 md:px-12 text-center">
+      <section className="py-24 md:py-32">
+        <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center">
           <Eyebrow>The Approach</Eyebrow>
           <p
             className="font-display-italic text-[var(--color-text)] mt-10"
@@ -96,11 +92,8 @@ export default function BoardingPage() {
       </Quote>
 
       {/* Closing CTA */}
-      <section className="relative py-24 md:py-36 overflow-hidden">
-        <GhostHeading position="bottom-right" size="lg">
-          Welcome
-        </GhostHeading>
-        <div className="relative max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col gap-10 items-center">
+      <section className="py-24 md:py-36">
+        <div className="max-w-[860px] mx-auto px-6 md:px-12 text-center flex flex-col gap-10 items-center">
           <OrnamentDivider />
           <Eyebrow>Boarding Enquiries</Eyebrow>
           <h2
